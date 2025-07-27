@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://24kgold12321:Testtest123..@cluster0.qs1fu.mongodb.net/uhome"
+}
+
+model uhome {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+}
+
+model RentalListing {
+  id             String         @id @default(auto()) @map("_id") @db.ObjectId
+  title          String
+  description    String
+  address        String
+  price          Int
+  images         String[]
+  roomCount      RoomCount
+  structuralType StructuralType
+  leaser         Leaser
+  creator        User           @relation(fields: [creatorId], references: [id])
+  creatorId      String         @db.ObjectId
+}
+
+enum StructuralType {
+  HOUSE
+  BASEMENT
+  APARTMENT
+  CONDO
+  ROOM
+}
+
+enum Leaser {
+  OWNER
+  ROOMMATE
+}
+
+type RoomCount {
+  bedrooms  Int
+  bathrooms Int
+}
+
+model User {
+  id              String           @id @default(auto()) @map("_id") @db.ObjectId
+  username        String           @unique
+  fullName        String
+  password        String
+  role            String
+  email           String           @unique
+  phoneNumber     String
+  birthday        DateTime
+  gender          String
+  schoolProgram   String
+  yearOfStudy     Int
+  discussionPosts DiscussionPost[]
+  RentalListing   RentalListing[]
+}
+
+model DiscussionPost {
+  id         String           @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  content    String
+  authorType String
+  author     User             @relation(fields: [authorId], references: [id])
+  authorId   String           @db.ObjectId
+  parent     DiscussionPost?  @relation("MainPost", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  parentId   String?          @db.ObjectId
+  comments   DiscussionPost[] @relation("MainPost")
+}
