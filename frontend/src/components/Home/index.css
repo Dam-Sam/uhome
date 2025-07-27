@@ -1,0 +1,124 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+    margin: 10px; /* Adjust margin as needed */
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensures images cover the area without stretching */
+  }
+  
+  .card-body {
+    padding: 15px;
+    background-color: #ffffff; /* Light background for the text area */
+  }
+  
+  .card-title {
+    color: #333333;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    color: #666666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .card-text:last-child {
+    margin-bottom: 0;
+  }
+  
+  .card-text .label {
+    font-weight: bold;
+  }
+
+  .btn-primary{
+    background-color: #337ab7;
+    padding: 0.75% 1.3%;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-light{
+    padding: 0.75% 1.3%;
+    font-size: 1.2em;
+    border-radius: 5px;
+  }
+  
+  .pagination span:hover {
+    border: 2px solid #001228;
+  }
+
+  .carousel {
+    margin-bottom: 2rem;
+    width: 45vw; /* Set the same width as the cards */
+  }
+  
+  .carousel-item img {
+    width: 100%; /* Make the images fill the entire width of the Carousel item */
+    height: 20rem; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the images cover the entire Carousel item */
+  }
+
+.filter-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 5px;
+  margin-bottom: 20px;
+  margin-left: 2.5rem;
+  margin-right: 1rem;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.filter-toggle {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.filter-input {
+  flex: 0 0 48%;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.apply-filter-button {
+  flex: 0 0 100%;
+}
+
+.filter-card:hover {
+  background-color: #337ab7; 
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.select-box {
+  margin-left: 10px; 
+  background-color: #ffffff;
+}
+
+
+  
